@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f7d9df;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background: #ccc;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="questionCard">
+    <h1>Will you be my Valentine? 💖</h1>
+    <button id="yesBtn" onclick="yesClicked()">Yes</button>
+    <button id="noBtn" onclick="noClicked()">No</button>
+  </div>
+
+  <div class="card hidden" id="resultCard">
+    <h1>Yayyy 💕</h1>
+    <p>
+      <strong>Nur Afdaliah Fahiraa</strong>,<br><br>
+      thank you for choosing me.<br>
+      You make my days warmer 💗
+    </p>
+  </div>
+
+  <script>
+    let yesSize = 16;
+
+    function noClicked() {
+      yesSize += 6;
+      document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+      document.getElementById("yesBtn").style.padding = "14px 26px";
+    }
+
+    function yesClicked() {
+      document.getElementById("questionCard").classList.add("hidden");
+      document.getElementById("resultCard").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
